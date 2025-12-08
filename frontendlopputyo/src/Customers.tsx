@@ -17,7 +17,9 @@ export default function Customers() {
   const [customers, setCustomers] = useState<Customer[]>([]);
 
   useEffect(() => {
-    fetch("https://traineeapp.azurewebsites.net/api/customers")
+    fetch(
+      "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/customers"
+    )
       .then((res) => res.json())
       .then((data) => setCustomers(data.content));
   }, []);

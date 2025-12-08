@@ -20,7 +20,9 @@ export default function Trainings() {
   const [trainings, setTrainings] = useState<Training[]>([]);
 
   useEffect(() => {
-    fetch("https://traineeapp.azurewebsites.net/api/trainings")
+    fetch(
+      "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings"
+    )
       .then((res) => res.json())
       .then((data) => {
         const trainingsWithCustomer: Training[] = data.content.map(
